@@ -245,3 +245,19 @@ const movePlayer = (key, xVelocity, isPressed) => {
 			player.velocity.x += xVelocity;
 	}
 };
+
+// Start Game
+const startGame = () => {
+	canvas.style.display = 'block';
+	startScreen.style.display = 'none';
+	animate();
+};
+
+// Show Checkpoint Screen
+const showCheckpointScreen = (msg) => {
+	checkpointScreen.style.display = 'block';
+	checkpointMessage.textContent = msg;
+	if (isCheckpointCollisionDetectionActive) {
+		setTimeout(() => (checkpointScreen.style.display = 'none'), 2000);
+	}
+};
