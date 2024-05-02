@@ -261,3 +261,14 @@ const showCheckpointScreen = (msg) => {
 		setTimeout(() => (checkpointScreen.style.display = 'none'), 2000);
 	}
 };
+
+// Event Listeners
+startBtn.addEventListener('click', startGame);
+
+window.addEventListener('keydown', ({ key }) => {
+	movePlayer(key, 8, true);
+});
+
+window.addEventListener('keyup', ({ key }) => {
+	movePlayer(key, 0, false);
+});
